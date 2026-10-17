@@ -6,6 +6,8 @@ import { getDictionary } from "@/i18n/get-dictionary";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ThemeSync } from "@/components/theme-sync";
+import { profile } from "@/content/profile";
+import { siteUrl } from "@/lib/site";
 import { InlineScript } from "@/components/inline-script";
 import "../globals.css";
 
@@ -21,24 +23,32 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   if (!hasLocale(lang)) return {};
   const dict = await getDictionary(lang);
   return {
+    metadataBase: new URL(siteUrl),
     title: dict.meta.title,
     description: dict.meta.description,
     alternates: {
       canonical: `/${lang}`,
       languages: Object.fromEntries(locales.map((l) => [l, `/${l}`])),
     },
+    // The preview image comes from opengraph-image.png in this folder.
+    openGraph: {
+      type: "website",
+      siteName: profile.name,
+      title: dict.meta.title,
+      description: dict.meta.description,
+      url: `/${lang}`,
+      locale: lang === "id" ? "id_ID" : "en_US",
+    },
+    twitter: { card: "summary_large_image" },
   };
 }
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0e0e0d" },
-  ],
+  themeColor: "#ffffff",
 };
 
 // Applies a saved theme before first paint so there is no light/dark flash.
-// No saved choice: the CSS follows prefers-color-scheme. Also restores paused cover animations.
+// No saved choice: light. Also restores paused cover animations.
 const themeScript = `(function(){try{var d=document.documentElement,t=localStorage.getItem("theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t);if(localStorage.getItem("motion")==="paused")d.setAttribute("data-motion","paused")}catch(e){}})()`;
 
 export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {

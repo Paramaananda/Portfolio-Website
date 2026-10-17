@@ -94,6 +94,7 @@
 /* ---------- Theme values ---------- */
 
 :root {
+  /* Light by default, whatever the device prefers; dark only via the toggle (data-theme). */
   color-scheme: light;
   --paper: #ffffff;
   --surface: #f4f4f2;
@@ -102,20 +103,6 @@
   --ink-3: #6b6b6b;
   --line: #e6e6e3;
   --signal-ink: #b93e0c;
-}
-
-/* No saved choice: follow the system. A saved choice sets data-theme on <html>. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --paper: #0e0e0d;
-    --surface: #1a1a18;
-    --ink: #f2f1ee;
-    --ink-2: #c4c2bc;
-    --ink-3: #94918a;
-    --line: #2a2927;
-    --signal-ink: #ff8a4c;
-  }
 }
 
 :root[data-theme="dark"] {
@@ -137,13 +124,6 @@
     --line: #9a9a96;
   }
   :root[data-theme="dark"] {
-    --ink-2: #e2e0db;
-    --ink-3: #c4c2bc;
-    --line: #6b6965;
-  }
-}
-@media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
     --ink-2: #e2e0db;
     --ink-3: #c4c2bc;
     --line: #6b6965;
@@ -321,13 +301,6 @@
     linear-gradient(140deg, color-mix(in oklab, var(--a) var(--sc-mix), var(--sc-base)), color-mix(in oklab, var(--b) var(--sc-mix), var(--sc-base)));
 }
 /* Dark theme: a deep tinted base with a coloured glow, so screens and charts pop. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .sc {
-    --sc-base: #101010;
-    --sc-mix: 16%;
-    --sc-glow: 34%;
-  }
-}
 :root[data-theme="dark"] .sc {
   --sc-base: #101010;
   --sc-mix: 16%;
