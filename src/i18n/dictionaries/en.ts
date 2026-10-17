@@ -42,12 +42,13 @@ const en = {
     label: "About",
     // Display heading stays English on every locale, like the hero word.
     heading: ["Design", "Data"],
-    // [CV] summary: fresh graduate in Informatics Engineering; UI/UX, user-centered design, digital products
-    lead: "I'm an Informatics Engineering graduate working where product design meets data.",
+    // Identity sentence (audit, approved 17 Oct 2026): name + AI/data + product design, visible near the top.
+    lead: "I'm I Putu Paramaananda Tanaya. I build AI and data systems, and design the products people use them through.",
     // [CV] TRAVLR + Raion (UI/UX); [PDF] p2 thesis RAG QA, p3 MLOps pipeline with continuous retraining;
     // [USER] current role at Garuda Indonesia
     body: [
-      "I started in UI/UX — talking to users, mapping flows, and testing prototypes until they feel effortless.",
+      // [CV] summary: fresh graduate in Informatics Engineering
+      "An Informatics Engineering graduate of Universitas Brawijaya, I started in UI/UX — talking to users, mapping flows, and testing prototypes until they feel effortless.",
       "That curiosity pulled me into the data side: a RAG-based question-answering system for my thesis, and an MLOps pipeline that keeps a sentiment model retraining on fresh data. Today I'm an IT Intern at Garuda Indonesia.",
     ],
     pillars: [

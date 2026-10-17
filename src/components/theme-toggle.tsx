@@ -8,19 +8,14 @@ type Theme = "light" | "dark";
 const resolveTheme = (): Theme => {
   const set = document.documentElement.getAttribute("data-theme");
   if (set === "light" || set === "dark") return set;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return "light"; // Default is light; the device preference is ignored.
 };
 
-// Re-render when the attribute or the system preference changes.
+// Re-render when the attribute changes.
 const subscribe = (onChange: () => void) => {
-  const mq = window.matchMedia("(prefers-color-scheme: dark)");
   const mo = new MutationObserver(onChange);
   mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-  mq.addEventListener("change", onChange);
-  return () => {
-    mo.disconnect();
-    mq.removeEventListener("change", onChange);
-  };
+  return () => mo.disconnect();
 };
 
 export function ThemeToggle({ labels }: { labels: { toDark: string; toLight: string } }) {

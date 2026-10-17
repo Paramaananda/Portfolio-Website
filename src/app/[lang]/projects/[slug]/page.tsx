@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import { ViewTransition, type CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,7 +21,10 @@ export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export async function generateMetadata({ params }: PageProps<"/[lang]/projects/[slug]">): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: PageProps<"/[lang]/projects/[slug]">,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { lang, slug } = await params;
   const project = getProject(slug);
   if (!hasLocale(lang) || !project) return {};
@@ -32,6 +35,15 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/projects/[
     alternates: {
       canonical: `/${lang}/projects/${slug}`,
       languages: Object.fromEntries(locales.map((l) => [l, `/${l}/projects/${slug}`])),
+    },
+    // Page-level openGraph replaces the layout's, so carry over the portfolio preview image.
+    openGraph: {
+      images: (await parent).openGraph?.images ?? [],
+      type: "article",
+      title: c.title,
+      description: c.tagline,
+      url: `/${lang}/projects/${slug}`,
+      locale: lang === "id" ? "id_ID" : "en_US",
     },
   };
 }
@@ -215,7 +227,7 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/project
                 >
                   <Image
                     src={g.src}
-                    alt={`${c.title} — ${t.figure} ${i + 1}`}
+                    alt={g.alt[lang]}
                     width={g.width}
                     height={g.height}
                     sizes="(min-width: 1280px) 600px, (min-width: 640px) 50vw, 100vw"

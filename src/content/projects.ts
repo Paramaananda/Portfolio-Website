@@ -13,6 +13,8 @@ export type Category = "ai" | "design" | "web";
 export type LinkKind = "github" | "publication" | "deck" | "figma" | "prototype" | "userflow";
 
 export type Img = { src: string; width: number; height: number };
+/** Gallery image with a description of what it shows (alt text), per locale. */
+export type Figure = Img & { alt: { en: string; id: string } };
 type L<T> = Record<Locale, T>;
 
 export type Step = { image?: Img; copy: L<{ title: string; text: string }> };
@@ -42,7 +44,7 @@ export type Project = {
   showcase: Showcase;
   copy: L<{ title: string; type: string; tagline: string; overview: string; role: string; outcome: string }>;
   journey: Step[];
-  gallery: Img[];
+  gallery: Figure[];
 };
 
 const im = (slug: string, file: string, width: number, height: number): Img => ({
@@ -50,6 +52,8 @@ const im = (slug: string, file: string, width: number, height: number): Img => (
   width,
   height,
 });
+
+const fig = (img: Img, en: string, id: string): Figure => ({ ...img, alt: { en, id } });
 
 const step = (en: [string, string], id: [string, string], image?: Img): Step => ({
   image,
@@ -87,7 +91,7 @@ export const projects: Project[] = [
           "Existing nutrition datasets held only question–answer pairs, with no supporting context for a retrieval system to ground its answers on. For my undergraduate thesis I used large language models to generate that context synthetically, then built a Retrieval-Augmented Generation (RAG) system that answers pediatric nutrition questions for nutrition professionals.",
         role: "I analysed the requirements, designed the end-to-end RAG architecture, built the synthetic-context pipeline, prepared the nutrition datasets, integrated the vector database and LLM APIs, and evaluated the system with quantitative metrics.",
         outcome:
-          "OpenAI zero-shot scored the highest BERTScore-F1, 0.9252. The work taught me to build an AI information system end to end and to improve it through systematic experiments.",
+          "I compared four set-ups: OpenAI and Ollama, each zero-shot and few-shot. Generated answers were scored against the dataset's reference answers with BERTScore-F1, plus RAG metrics such as faithfulness and context recall. OpenAI zero-shot scored highest (0.9252), ahead of OpenAI few-shot (0.9084) and Ollama (0.8337 zero-shot, 0.8356 few-shot). BERTScore measures how close an answer is to the reference text, not clinical accuracy: this is thesis research and a prototype, not a deployed medical tool.",
       },
       id: {
         title: "Tanya-Jawab Gizi dengan RAG",
@@ -97,7 +101,7 @@ export const projects: Project[] = [
           "Dataset gizi yang ada hanya berisi pasangan tanya-jawab, tanpa konteks pendukung yang bisa dijadikan dasar jawaban oleh sistem retrieval. Untuk skripsi, saya memakai large language model untuk membuat konteks tersebut secara sintetis, lalu membangun sistem Retrieval-Augmented Generation (RAG) yang menjawab pertanyaan gizi anak bagi tenaga profesional gizi.",
         role: "Saya menganalisis kebutuhan, merancang arsitektur RAG end-to-end, membangun pipeline konteks sintetis, menyiapkan dataset gizi, mengintegrasikan vector database dan API LLM, serta mengevaluasi sistem dengan metrik kuantitatif.",
         outcome:
-          "OpenAI zero-shot meraih BERTScore-F1 tertinggi, 0,9252. Dari proyek ini saya belajar membangun sistem informasi berbasis AI secara utuh dan menyempurnakannya lewat eksperimen yang sistematis.",
+          "Saya membandingkan empat skenario: OpenAI dan Ollama, masing-masing zero-shot dan few-shot. Jawaban yang dihasilkan dinilai terhadap jawaban rujukan di dataset dengan BERTScore-F1, ditambah metrik RAG seperti faithfulness dan context recall. OpenAI zero-shot meraih skor tertinggi (0,9252), di atas OpenAI few-shot (0,9084) dan Ollama (0,8337 zero-shot, 0,8356 few-shot). BERTScore mengukur kedekatan jawaban dengan teks rujukan, bukan akurasi klinis: ini riset skripsi dan prototipe, bukan alat medis yang sudah dipakai.",
       },
     },
     journey: [
@@ -120,10 +124,26 @@ export const projects: Project[] = [
         im("nutrition-rag-qa", "02.webp", 542, 342),
       ),
     ],
-    gallery: [im("nutrition-rag-qa", "03.webp", 665, 334), im("nutrition-rag-qa", "04.webp", 665, 334), im("nutrition-rag-qa", "05.webp", 480, 360)],
+    gallery: [
+      fig(
+        im("nutrition-rag-qa", "03.webp", 665, 334),
+        "Radar charts of RAG quality metrics (faithfulness, answer relevancy, context precision and recall, semantic similarity, answer correctness) for OpenAI zero-shot and few-shot at four restriction levels.",
+        "Grafik radar metrik kualitas RAG (faithfulness, answer relevancy, context precision dan recall, semantic similarity, answer correctness) untuk OpenAI zero-shot dan few-shot pada empat tingkat restriksi.",
+      ),
+      fig(
+        im("nutrition-rag-qa", "04.webp", 665, 334),
+        "The same RAG quality radar charts for Ollama zero-shot and few-shot at four restriction levels.",
+        "Grafik radar metrik kualitas RAG yang sama untuk Ollama zero-shot dan few-shot pada empat tingkat restriksi.",
+      ),
+      fig(
+        im("nutrition-rag-qa", "05.webp", 480, 360),
+        "Thesis meeting: three people around a table with a laptop and a tablet.",
+        "Pertemuan skripsi: tiga orang di sekitar meja dengan laptop dan tablet.",
+      ),
+    ],
   },
 
-  /* [PDF] p3 */
+  /* [PDF] p3; outcome from the system diagram (02.webp) and Grafana dashboard (00.webp). */
   {
     slug: "mbg-sentiment-mlops",
     year: "2025",
@@ -147,7 +167,7 @@ export const projects: Project[] = [
           "Our team built an end-to-end MLOps pipeline to analyse public sentiment toward Indonesia's Makan Bergizi Gratis (MBG) program using posts from X (Twitter). Every stage — data collection, preprocessing, training, deployment, monitoring, and continuous retraining — is automated, so the system stays scalable, reproducible, and maintainable.",
         role: "I focused on data engineering and MLOps: the data-collection workflow, dataset preprocessing, the training and retraining pipelines, and deployment and monitoring with GitHub Actions, Docker, MLflow, PostgreSQL, MinIO, and Grafana.",
         outcome:
-          "Hands-on experience shipping a production-style ML system and working in a Git-based team workflow where many services come together in one architecture.",
+          "The pipeline runs on a schedule. Posts from X are scraped and classified every day; expert-labelled data is versioned with DVC each week; the trainer retrains the model weekly, with runs tracked in MLflow and artifacts stored in MinIO; and each new model is picked up by the inference service. Predictions and metrics are saved to PostgreSQL and feed a Grafana dashboard of sentiment over the last seven days. It is a team project: my part was the data and MLOps layers.",
       },
       id: {
         title: "Platform MLOps Sentimen MBG",
@@ -157,7 +177,7 @@ export const projects: Project[] = [
           "Tim kami membangun pipeline MLOps end-to-end untuk menganalisis sentimen publik terhadap program Makan Bergizi Gratis (MBG) dari unggahan di X (Twitter). Seluruh tahap — pengumpulan data, preprocessing, training, deployment, monitoring, hingga retraining berkelanjutan — berjalan otomatis sehingga sistem tetap skalabel, reproducible, dan mudah dirawat.",
         role: "Saya fokus pada data engineering dan MLOps: alur pengumpulan data, preprocessing dataset, pipeline training dan retraining, serta deployment dan monitoring dengan GitHub Actions, Docker, MLflow, PostgreSQL, MinIO, dan Grafana.",
         outcome:
-          "Pengalaman langsung merilis sistem ML bergaya produksi dan bekerja dalam alur tim berbasis Git, di mana banyak layanan menyatu dalam satu arsitektur.",
+          "Pipeline berjalan terjadwal. Unggahan dari X diambil dan diklasifikasi setiap hari; data berlabel pakar diversikan dengan DVC tiap minggu; trainer melatih ulang model setiap minggu, dengan run tercatat di MLflow dan artefak disimpan di MinIO; dan setiap model baru langsung dipakai layanan inference. Prediksi dan metrik disimpan di PostgreSQL dan mengisi dashboard Grafana berisi sentimen tujuh hari terakhir. Ini proyek tim: bagian saya adalah lapisan data dan MLOps.",
       },
     },
     journey: [
@@ -181,7 +201,13 @@ export const projects: Project[] = [
         im("mbg-sentiment-mlops", "00.webp", 758, 372),
       ),
     ],
-    gallery: [im("mbg-sentiment-mlops", "03.webp", 699, 344)],
+    gallery: [
+      fig(
+        im("mbg-sentiment-mlops", "03.webp", 699, 344),
+        "MLflow model metrics for an incremental retraining run (mbg-sentiment-incremental, 18 Dec 2025): epoch, eval accuracy, F1 macro, loss, and runtime.",
+        "Metrik model di MLflow untuk satu run retraining inkremental (mbg-sentiment-incremental, 18 Des 2025): epoch, eval accuracy, F1 macro, loss, dan runtime.",
+      ),
+    ],
   },
 
   /* [PDF] p4 */
@@ -311,7 +337,13 @@ export const projects: Project[] = [
         im("memoribox", "04.webp", 1017, 572),
       ),
     ],
-    gallery: [im("memoribox", "03.webp", 754, 310)],
+    gallery: [
+      fig(
+        im("memoribox", "03.webp", 754, 310),
+        "Memoribox mascot sheet: colour palette, two illustrated characters, and the smiling yellow box mascot in photo-booth poses.",
+        "Lembar maskot Memoribox: palet warna, dua karakter ilustrasi, dan maskot kotak kuning tersenyum dalam pose photobooth.",
+      ),
+    ],
   },
 
   /* [PDF] p6 */
@@ -830,7 +862,18 @@ export const projects: Project[] = [
         im("poverty-prediction", "features.webp", 607, 304),
       ),
     ],
-    gallery: [im("poverty-prediction", "score.webp", 562, 213), im("poverty-prediction", "predict.webp", 439, 280)],
+    gallery: [
+      fig(
+        im("poverty-prediction", "score.webp", 562, 213),
+        "Notebook output of the regression score: 0.479 on the test set and 0.512 on the training set.",
+        "Output notebook skor regresi: 0,479 pada data uji dan 0,512 pada data latih.",
+      ),
+      fig(
+        im("poverty-prediction", "predict.webp", 439, 280),
+        "Line chart of poverty rates for Viet Nam, Sweden, Bangladesh, Indonesia, and Ecuador from 2018 to 2022, with the 2023 prediction.",
+        "Grafik garis tingkat kemiskinan Viet Nam, Swedia, Bangladesh, Indonesia, dan Ekuador tahun 2018–2022, beserta prediksi 2023.",
+      ),
+    ],
   },
 
   /* [FIGMA] Kaggle ML frame */

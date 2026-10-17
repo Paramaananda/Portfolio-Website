@@ -40,9 +40,9 @@ const id: Dictionary = {
   about: {
     label: "Tentang",
     heading: ["Design", "Data"],
-    lead: "Saya lulusan Teknik Informatika yang bekerja di titik temu desain produk dan data.",
+    lead: "Saya I Putu Paramaananda Tanaya. Saya membangun sistem AI dan data, serta merancang produk yang membuatnya bisa dipakai orang.",
     body: [
-      "Saya memulai dari UI/UX — ngobrol dengan pengguna, memetakan alur, dan menguji prototipe sampai terasa mudah dipakai.",
+      "Sebagai lulusan Teknik Informatika Universitas Brawijaya, saya memulai dari UI/UX — ngobrol dengan pengguna, memetakan alur, dan menguji prototipe sampai terasa mudah dipakai.",
       "Rasa penasaran itu membawa saya ke sisi data: sistem tanya-jawab berbasis RAG untuk skripsi, dan pipeline MLOps yang melatih ulang model sentimen dengan data terbaru. Kini saya menjadi IT Intern di Garuda Indonesia.",
     ],
     pillars: [
