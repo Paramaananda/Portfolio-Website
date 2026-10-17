@@ -63,6 +63,73 @@ const step = (en: [string, string], id: [string, string], image?: Img): Step => 
 /* ------------------------------------------------------------------ */
 
 export const projects: Project[] = [
+  /* [PDF] p4 */
+  {
+    slug: "momenia",
+    year: "2026",
+    category: "design",
+    roles: ["Product Designer", "Software Tester"],
+    tags: ["Product design", "Web app", "User flows", "Responsive UI"],
+    links: [
+      {
+        kind: "figma",
+        href: "https://www.figma.com/design/df6llHayTtyDXoEgxApgEs/MOMENIA-%F0%9F%A6%8B-Paramaananda?node-id=3004-1128&t=6LOzIszRjU3JaL7R-1",
+      },
+    ],
+    tint: ["#d9d4ff", "#f1d9ff"],
+    // [USER] src/content/Showcase Momenia.mp4, re-encoded without audio (56 MB → 0.7 MB card, 2.2 MB hero).
+    showcase: {
+      kind: "video",
+      card: "/videos/momenia/showcase-640.mp4",
+      hero: "/videos/momenia/showcase-1280.mp4",
+      poster: "/videos/momenia/poster.webp",
+    },
+    copy: {
+      en: {
+        title: "Momenia",
+        type: "Startup project · Product design",
+        tagline: "An affordable website builder for digital invitations, born from Bali's many ceremonies.",
+        overview:
+          "Bali hosts countless events, ceremonies, and celebrations that need digital invitations, yet invitation websites are often expensive, manual, or hard to customise without help. Momenia, a self-initiated project by Semeton Corp, lets anyone create, customise, publish, and manage invitations — with editable templates, responsive layouts, add-ons, payments, guest management, RSVP tracking, a guestbook, and after-party notes.",
+        role: "As Product Designer I translated product requirements into user flows, wireframes, high-fidelity screens, and responsive concepts for both the user and the admin experience.",
+        outcome:
+          "I learned to turn a local market opportunity into a scalable product, structure a complex feature set into a clear journey, and prepare it for launch with a small startup team.",
+      },
+      id: {
+        title: "Momenia",
+        type: "Proyek startup · Desain produk",
+        tagline: "Website builder undangan digital yang terjangkau, lahir dari banyaknya upacara di Bali.",
+        overview:
+          "Bali punya banyak acara, upacara, dan perayaan yang membutuhkan undangan digital, tetapi membuat website undangan sering mahal, manual, atau sulit diatur tanpa bantuan teknis. Momenia, proyek inisiatif Semeton Corp, memudahkan siapa saja membuat, menyesuaikan, memublikasikan, dan mengelola undangan — lengkap dengan template, layout responsif, add-on, pembayaran, manajemen tamu, RSVP, buku tamu, dan catatan after-party.",
+        role: "Sebagai Product Designer, saya menerjemahkan kebutuhan produk menjadi user flow, wireframe, desain high-fidelity, dan konsep responsif untuk sisi pengguna maupun admin.",
+        outcome:
+          "Saya belajar mengubah peluang pasar lokal menjadi produk yang skalabel, menyusun fitur yang kompleks menjadi alur yang jelas, dan menyiapkannya untuk rilis bersama tim startup kecil.",
+      },
+    },
+    journey: [
+      step(
+        ["Opportunity", "Observed how often Balinese events need invitations, and how costly or manual making one still is."],
+        ["Peluang", "Mengamati seberapa sering acara di Bali butuh undangan, dan betapa mahal atau manualnya membuat satu undangan."],
+        im("momenia", "02.webp", 800, 520),
+      ),
+      step(
+        ["Requirements & user flows", "Turned the feature set — templates, payments, RSVP, guestbook — into clear user and admin journeys."],
+        ["Kebutuhan & user flow", "Mengubah daftar fitur — template, pembayaran, RSVP, buku tamu — menjadi alur yang jelas untuk pengguna dan admin."],
+      ),
+      step(
+        ["Wireframes & high-fidelity", "Designed the builder and admin screens, from wireframes to responsive high-fidelity UI."],
+        ["Wireframe & high-fidelity", "Mendesain layar builder dan admin, dari wireframe hingga UI high-fidelity yang responsif."],
+        im("momenia", "01.webp", 654, 364),
+      ),
+      step(
+        ["Testing & launch prep", "Tested the product as Software Tester and prepared it for deployment with the team."],
+        ["Pengujian & persiapan rilis", "Menguji produk sebagai Software Tester dan menyiapkannya untuk deployment bersama tim."],
+        im("momenia", "00.webp", 692, 405),
+      ),
+    ],
+    gallery: [],
+  },
+
   /* [PDF] p2 */
   {
     slug: "nutrition-rag-qa",
@@ -208,73 +275,6 @@ export const projects: Project[] = [
         "Metrik model di MLflow untuk satu run retraining inkremental (mbg-sentiment-incremental, 18 Des 2025): epoch, eval accuracy, F1 macro, loss, dan runtime.",
       ),
     ],
-  },
-
-  /* [PDF] p4 */
-  {
-    slug: "momenia",
-    year: "2026",
-    category: "design",
-    roles: ["Product Designer", "Software Tester"],
-    tags: ["Product design", "Web app", "User flows", "Responsive UI"],
-    links: [
-      {
-        kind: "figma",
-        href: "https://www.figma.com/design/df6llHayTtyDXoEgxApgEs/MOMENIA-%F0%9F%A6%8B-Paramaananda?node-id=3004-1128&t=6LOzIszRjU3JaL7R-1",
-      },
-    ],
-    tint: ["#d9d4ff", "#f1d9ff"],
-    // [USER] src/content/Showcase Momenia.mp4, re-encoded without audio (56 MB → 0.7 MB card, 2.2 MB hero).
-    showcase: {
-      kind: "video",
-      card: "/videos/momenia/showcase-640.mp4",
-      hero: "/videos/momenia/showcase-1280.mp4",
-      poster: "/videos/momenia/poster.webp",
-    },
-    copy: {
-      en: {
-        title: "Momenia",
-        type: "Startup project · Product design",
-        tagline: "An affordable website builder for digital invitations, born from Bali's many ceremonies.",
-        overview:
-          "Bali hosts countless events, ceremonies, and celebrations that need digital invitations, yet invitation websites are often expensive, manual, or hard to customise without help. Momenia, a self-initiated project by Semeton Corp, lets anyone create, customise, publish, and manage invitations — with editable templates, responsive layouts, add-ons, payments, guest management, RSVP tracking, a guestbook, and after-party notes.",
-        role: "As Product Designer I translated product requirements into user flows, wireframes, high-fidelity screens, and responsive concepts for both the user and the admin experience.",
-        outcome:
-          "I learned to turn a local market opportunity into a scalable product, structure a complex feature set into a clear journey, and prepare it for launch with a small startup team.",
-      },
-      id: {
-        title: "Momenia",
-        type: "Proyek startup · Desain produk",
-        tagline: "Website builder undangan digital yang terjangkau, lahir dari banyaknya upacara di Bali.",
-        overview:
-          "Bali punya banyak acara, upacara, dan perayaan yang membutuhkan undangan digital, tetapi membuat website undangan sering mahal, manual, atau sulit diatur tanpa bantuan teknis. Momenia, proyek inisiatif Semeton Corp, memudahkan siapa saja membuat, menyesuaikan, memublikasikan, dan mengelola undangan — lengkap dengan template, layout responsif, add-on, pembayaran, manajemen tamu, RSVP, buku tamu, dan catatan after-party.",
-        role: "Sebagai Product Designer, saya menerjemahkan kebutuhan produk menjadi user flow, wireframe, desain high-fidelity, dan konsep responsif untuk sisi pengguna maupun admin.",
-        outcome:
-          "Saya belajar mengubah peluang pasar lokal menjadi produk yang skalabel, menyusun fitur yang kompleks menjadi alur yang jelas, dan menyiapkannya untuk rilis bersama tim startup kecil.",
-      },
-    },
-    journey: [
-      step(
-        ["Opportunity", "Observed how often Balinese events need invitations, and how costly or manual making one still is."],
-        ["Peluang", "Mengamati seberapa sering acara di Bali butuh undangan, dan betapa mahal atau manualnya membuat satu undangan."],
-        im("momenia", "02.webp", 800, 520),
-      ),
-      step(
-        ["Requirements & user flows", "Turned the feature set — templates, payments, RSVP, guestbook — into clear user and admin journeys."],
-        ["Kebutuhan & user flow", "Mengubah daftar fitur — template, pembayaran, RSVP, buku tamu — menjadi alur yang jelas untuk pengguna dan admin."],
-      ),
-      step(
-        ["Wireframes & high-fidelity", "Designed the builder and admin screens, from wireframes to responsive high-fidelity UI."],
-        ["Wireframe & high-fidelity", "Mendesain layar builder dan admin, dari wireframe hingga UI high-fidelity yang responsif."],
-        im("momenia", "01.webp", 654, 364),
-      ),
-      step(
-        ["Testing & launch prep", "Tested the product as Software Tester and prepared it for deployment with the team."],
-        ["Pengujian & persiapan rilis", "Menguji produk sebagai Software Tester dan menyiapkannya untuk deployment bersama tim."],
-        im("momenia", "00.webp", 692, 405),
-      ),
-    ],
-    gallery: [],
   },
 
   /* [PDF] p5 */
