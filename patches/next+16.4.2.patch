@@ -1,0 +1,27 @@
+diff --git a/node_modules/next/dist/server/dev/next-dev-server.js b/node_modules/next/dist/server/dev/next-dev-server.js
+index 95a71fd..1bfad54 100644
+--- a/node_modules/next/dist/server/dev/next-dev-server.js
++++ b/node_modules/next/dist/server/dev/next-dev-server.js
+@@ -595,8 +595,20 @@ class DevServer extends _nextserver.default {
+             (!isAppPath || prerenderedRoutes && prerenderedRoutes.length > 0)) {
+                 // we write the static paths to partial manifest for
+                 // fallback handling inside of entry handler's
+-                const rawExistingManifest = await _fs.default.promises.readFile((0, _path.join)(this.distDir, _constants1.PRERENDER_MANIFEST), 'utf8');
+-                const existingManifest = JSON.parse(rawExistingManifest);
++                // Patched (patches/next+16.4.2.patch): parallel requests can read the
++                // manifest while another one is rewriting it, so retry on a partial file.
++                let rawExistingManifest;
++                let existingManifest;
++                for(let attempt = 0;; attempt++){
++                    rawExistingManifest = await _fs.default.promises.readFile((0, _path.join)(this.distDir, _constants1.PRERENDER_MANIFEST), 'utf8');
++                    try {
++                        existingManifest = JSON.parse(rawExistingManifest);
++                        break;
++                    } catch (err) {
++                        if (attempt >= 20) throw err;
++                        await new Promise((resolve)=>setTimeout(resolve, 25));
++                    }
++                }
+                 for (const staticPath of value.staticPaths || []){
+                     existingManifest.routes[staticPath] = {};
+                 }
