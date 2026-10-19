@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import { OrgLogo } from "@/components/org-logo";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { SectionLabel } from "@/components/section-label";
 import { NeedsConfirmation } from "@/components/needs-confirmation";
@@ -61,10 +62,13 @@ export function Experience({ dict }: { dict: Dictionary }) {
                 >
                   {item.period.match(/\d{4}/g)?.pop()}
                 </span>
-                <p className="label min-h-[1.4em] text-ink-3 transition-colors duration-500 group-hover:text-night">
-                  {item.period}
-                  {item.confirm && <NeedsConfirmation note={item.confirm} />}
-                </p>
+                <div className="flex items-start justify-between gap-3">
+                  <p className="label min-h-[1.4em] text-ink-3 transition-colors duration-500 group-hover:text-night">
+                    {item.period}
+                    {item.confirm && <NeedsConfirmation note={item.confirm} />}
+                  </p>
+                  <OrgLogo name={item.school} className="size-12" />
+                </div>
                 <p className="mt-6 text-xl leading-snug font-medium tracking-tight">{item.school}</p>
                 <p className="mt-1 text-ink-2 transition-colors duration-500 group-hover:text-night/85">{item.program}</p>
                 <p className="mt-1 text-sm text-ink-3 transition-colors duration-500 group-hover:text-night">{item.meta}</p>

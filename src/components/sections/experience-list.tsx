@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import { OrgLogo } from "@/components/org-logo";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { NeedsConfirmation } from "@/components/needs-confirmation";
 
@@ -87,7 +88,10 @@ export function ExperienceList({ entries, now }: Props) {
                 <span className="block text-lg leading-snug font-medium tracking-tight transition-colors group-hover:text-signal-ink sm:text-xl">
                   {e.role}
                 </span>
-                <span className="mt-0.5 block text-sm text-ink-2 sm:text-base">{e.org}</span>
+                <span className="mt-1 flex items-center gap-2 text-sm text-ink-2 sm:text-base">
+                  <OrgLogo name={e.org} className="size-6 rounded-md p-0.5" />
+                  {e.org}
+                </span>
               </span>
 
               <span className="flex items-center justify-end lg:col-span-1">
