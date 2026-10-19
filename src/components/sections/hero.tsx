@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { OrgLogo } from "@/components/org-logo";
+import { TiltCard } from "@/components/tilt-card";
 import { SectionLink } from "@/components/section-link";
 import type { CSSProperties } from "react";
 import type { Locale } from "@/i18n/config";
@@ -102,10 +104,13 @@ export function Hero({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         {/* White-side copy: inside the white panel on desktop, below the frame on mobile */}
         <aside className="mt-4 grid gap-4 sm:grid-cols-2 lg:absolute lg:inset-y-2 lg:right-2 lg:mt-0 lg:flex lg:w-[44%] lg:flex-col lg:items-end lg:justify-between lg:p-8 xl:p-10">
           <div className="animate-rise rounded-card bg-surface p-6 lg:mt-[22%] lg:w-[min(220px,100%)] lg:bg-transparent lg:p-0 xl:w-[min(240px,100%)]" style={delay(350)}>
-            <p className="label flex items-center gap-2 text-signal-ink">
-              {t.statusLabel}
-              <span aria-hidden className="size-1.5 rounded-full bg-ember-500" />
-            </p>
+            <div className="flex items-start justify-between gap-3">
+              <p className="label flex items-center gap-2 text-signal-ink">
+                {t.statusLabel}
+                <span aria-hidden className="size-1.5 rounded-full bg-ember-500" />
+              </p>
+              <OrgLogo name={t.status[1]} className="size-10" />
+            </div>
             <p className="mt-3 text-2xl leading-tight font-medium tracking-tight">
               {t.status[0]}
               <br />
@@ -114,11 +119,17 @@ export function Hero({ lang, dict }: { lang: Locale; dict: Dictionary }) {
             <p className="mt-3 text-sm text-ink-3">{t.statusDetail}</p>
           </div>
 
-          <div className="animate-rise rounded-card bg-surface p-6 lg:w-[min(230px,100%)] lg:p-5 xl:w-[min(260px,100%)]" style={delay(450)}>
-            <p className="label text-ink-3">{t.eduLabel}</p>
-            <p className="mt-3 text-xl leading-tight font-medium tracking-tight">{t.eduMajor}</p>
-            <p className="mt-1 text-sm leading-snug text-ink-2">{t.eduSchool}</p>
-            <p className="label mt-4 text-ink-3">{t.eduPeriod}</p>
+          {/* Outer div runs the entrance animation; TiltCard owns the hover transform. */}
+          <div className="animate-rise lg:w-[min(230px,100%)] xl:w-[min(260px,100%)]" style={delay(450)}>
+            <TiltCard className="rounded-card bg-surface p-6 hover:text-night lg:p-5">
+              <div className="flex items-start justify-between gap-3">
+                <p className="label text-ink-3 transition-colors duration-500 group-hover:text-night">{t.eduLabel}</p>
+                <OrgLogo name={t.eduSchool} className="size-10" />
+              </div>
+              <p className="mt-3 text-xl leading-tight font-medium tracking-tight">{t.eduMajor}</p>
+              <p className="mt-1 text-sm leading-snug text-ink-2 transition-colors duration-500 group-hover:text-night/85">{t.eduSchool}</p>
+              <p className="label mt-4 text-ink-3 transition-colors duration-500 group-hover:text-night">{t.eduPeriod}</p>
+            </TiltCard>
           </div>
         </aside>
       </div>
