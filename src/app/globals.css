@@ -685,3 +685,29 @@ html.theme-switching::view-transition-new(root) {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* MLOps pipeline (mlops-pipeline.tsx): a packet runs the track left to right, then loops. */
+@media (prefers-reduced-motion: no-preference) {
+  .pipe-packet {
+    animation: pipe-travel 6s linear infinite;
+  }
+}
+[data-motion="paused"] .pipe-packet {
+  animation-play-state: paused;
+}
+@keyframes pipe-travel {
+  from {
+    left: 0%;
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  to {
+    left: 100%;
+    opacity: 0;
+  }
+}

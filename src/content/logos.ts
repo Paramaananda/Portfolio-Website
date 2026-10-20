@@ -9,6 +9,7 @@
 export type OrgLogo = { src: string; width: number; height: number; wide?: boolean };
 
 export const orgLogos: Record<string, OrgLogo> = {
+  "PT Garuda Indonesia (Persero) Tbk": { src: "/images/logos/garuda-mark.png", width: 200, height: 87, wide: true },
   "Garuda Indonesia": { src: "/images/logos/garuda-mark.png", width: 200, height: 87, wide: true },
   "PT TRAVLR GUIDES INDONESIA": { src: "/images/logos/travlr-mark.png", width: 200, height: 87, wide: true },
   "Universitas Brawijaya": { src: "/images/logos/brawijaya.webp", width: 160, height: 161 },
