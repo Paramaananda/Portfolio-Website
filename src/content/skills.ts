@@ -19,6 +19,7 @@ import {
   siTailwindcss,
   siTrello,
   type SimpleIcon,
+  siKotlin,
 } from "simple-icons";
 
 export type Tool = { name: string; icon?: SimpleIcon; mono?: string };
@@ -27,6 +28,7 @@ export const tools: Tool[] = [
   { name: "Python", icon: siPython },
   { name: "Java", mono: "Java" },
   { name: "JavaScript", icon: siJavascript },
+  { name: "Kotlin", icon: siKotlin },
   { name: "SQL", mono: "SQL" },
   { name: "MLflow", icon: siMlflow },
   { name: "Docker", icon: siDocker },
@@ -37,7 +39,6 @@ export const tools: Tool[] = [
   { name: "CSS", icon: siCss },
   { name: "Figma", icon: siFigma },
   { name: "Maze", icon: siMaze },
-  { name: "Adobe Illustrator", mono: "Ai" },
   { name: "Adobe Creative Cloud", mono: "Cc" },
   { name: "Looker Studio", mono: "LS" },
   { name: "Jira", icon: siJira },

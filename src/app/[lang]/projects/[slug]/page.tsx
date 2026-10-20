@@ -1,4 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
+import { MlopsPipeline } from "@/components/mlops-pipeline";
+import { RagDemo } from "@/components/rag-demo";
 import { ViewTransition, type CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -206,6 +208,9 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/project
             })}
           </div>
         </section>
+
+        {project.interactive === "mlops-pipeline" && <MlopsPipeline lang={lang} labels={t.pipeline} />}
+        {project.interactive === "rag-demo" && <RagDemo lang={lang} labels={t.ragDemo} />}
 
         {/* Outcome */}
         <section aria-labelledby="outcome-title" className="reveal mt-20 rounded-frame bg-surface p-8 sm:p-12 lg:mt-28 lg:p-16">

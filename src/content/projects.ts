@@ -45,6 +45,8 @@ export type Project = {
   copy: L<{ title: string; type: string; tagline: string; overview: string; role: string; outcome: string }>;
   journey: Step[];
   gallery: Figure[];
+  /** Optional interactive block on the project page. */
+  interactive?: "mlops-pipeline" | "rag-demo";
 };
 
 const im = (slug: string, file: string, width: number, height: number): Img => ({
@@ -142,6 +144,7 @@ export const projects: Project[] = [
       { kind: "publication", href: "https://j-ptiik.ub.ac.id/index.php/j-ptiik/article/view/15928" },
       { kind: "deck", href: "https://canva.link/o3g802hte6tov76" },
     ],
+    interactive: "rag-demo",
     tint: ["#cfe0ff", "#e9e3ff"],
     showcase: {
       kind: "rag",
@@ -218,6 +221,7 @@ export const projects: Project[] = [
     roles: ["MLOps Engineer", "Data Engineer"],
     tags: ["GitHub Actions", "Docker", "MLflow", "PostgreSQL", "MinIO", "Grafana"],
     links: [{ kind: "github", href: "https://github.com/indrabrata/mbg-sentiment-analysis" }],
+    interactive: "mlops-pipeline",
     tint: ["#ffd9c2", "#ffe9b8"],
     showcase: {
       kind: "loop",
