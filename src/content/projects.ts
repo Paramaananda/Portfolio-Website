@@ -93,7 +93,7 @@ export const projects: Project[] = [
         tagline: "An affordable website builder for digital invitations, born from Bali's many ceremonies.",
         overview:
           "Bali hosts countless events, ceremonies, and celebrations that need digital invitations, yet invitation websites are often expensive, manual, or hard to customise without help. Momenia, a self-initiated project by Semeton Corp, lets anyone create, customise, publish, and manage invitations — with editable templates, responsive layouts, add-ons, payments, guest management, RSVP tracking, a guestbook, and after-party notes.",
-        role: "As Product Designer I translated product requirements into user flows, wireframes, high-fidelity screens, and responsive concepts for both the user and the admin experience.",
+        role: "As Product Designer at Semeton Corp I translated product requirements into user flows, wireframes, high-fidelity screens, and responsive concepts for both the user and the admin experience.",
         outcome:
           "I learned to turn a local market opportunity into a scalable product, structure a complex feature set into a clear journey, and prepare it for launch with a small startup team.",
       },
@@ -103,7 +103,7 @@ export const projects: Project[] = [
         tagline: "Website builder undangan digital yang terjangkau, lahir dari banyaknya upacara di Bali.",
         overview:
           "Bali punya banyak acara, upacara, dan perayaan yang membutuhkan undangan digital, tetapi membuat website undangan sering mahal, manual, atau sulit diatur tanpa bantuan teknis. Momenia, proyek inisiatif Semeton Corp, memudahkan siapa saja membuat, menyesuaikan, memublikasikan, dan mengelola undangan — lengkap dengan template, layout responsif, add-on, pembayaran, manajemen tamu, RSVP, buku tamu, dan catatan after-party.",
-        role: "Sebagai Product Designer, saya menerjemahkan kebutuhan produk menjadi user flow, wireframe, desain high-fidelity, dan konsep responsif untuk sisi pengguna maupun admin.",
+        role: "Sebagai Product Designer di Semeton Corp, saya menerjemahkan kebutuhan produk menjadi user flow, wireframe, desain high-fidelity, dan konsep responsif untuk sisi pengguna maupun admin.",
         outcome:
           "Saya belajar mengubah peluang pasar lokal menjadi produk yang skalabel, menyusun fitur yang kompleks menjadi alur yang jelas, dan menyiapkannya untuk rilis bersama tim startup kecil.",
       },
@@ -219,7 +219,7 @@ export const projects: Project[] = [
     year: "2025",
     category: "ai",
     roles: ["MLOps Engineer", "Data Engineer"],
-    tags: ["GitHub Actions", "Docker", "MLflow", "PostgreSQL", "MinIO", "Grafana"],
+    tags: ["IndoBERT", "GitHub Actions", "Docker", "MLflow", "DVC", "Grafana"],
     links: [{ kind: "github", href: "https://github.com/indrabrata/mbg-sentiment-analysis" }],
     interactive: "mlops-pipeline",
     tint: ["#ffd9c2", "#ffe9b8"],
@@ -235,7 +235,7 @@ export const projects: Project[] = [
         type: "Team project · MLOps",
         tagline: "An automated pipeline that tracks public sentiment on Indonesia's free-meal program from X.",
         overview:
-          "Our team built an end-to-end MLOps pipeline to analyse public sentiment toward Indonesia's Makan Bergizi Gratis (MBG) program using posts from X (Twitter). Every stage — data collection, preprocessing, training, deployment, monitoring, and continuous retraining — is automated, so the system stays scalable, reproducible, and maintainable.",
+          "Our team built an end-to-end MLOps pipeline to analyse public sentiment toward Indonesia's Makan Bergizi Gratis (MBG) program using posts from X (Twitter) and an IndoBERT model. Every stage — data collection, preprocessing, training, deployment, monitoring, and continuous retraining — is automated, so the system stays scalable, reproducible, and maintainable.",
         role: "I focused on data engineering and MLOps: the data-collection workflow, dataset preprocessing, the training and retraining pipelines, and deployment and monitoring with GitHub Actions, Docker, MLflow, PostgreSQL, MinIO, and Grafana.",
         outcome:
           "The pipeline runs on a schedule. Posts from X are scraped and classified every day; expert-labelled data is versioned with DVC each week; the trainer retrains the model weekly, with runs tracked in MLflow and artifacts stored in MinIO; and each new model is picked up by the inference service. Predictions and metrics are saved to PostgreSQL and feed a Grafana dashboard of sentiment over the last seven days. It is a team project: my part was the data and MLOps layers.",
@@ -245,7 +245,7 @@ export const projects: Project[] = [
         type: "Proyek tim · MLOps",
         tagline: "Pipeline otomatis yang memantau sentimen publik terhadap program Makan Bergizi Gratis dari X.",
         overview:
-          "Tim kami membangun pipeline MLOps end-to-end untuk menganalisis sentimen publik terhadap program Makan Bergizi Gratis (MBG) dari unggahan di X (Twitter). Seluruh tahap — pengumpulan data, preprocessing, training, deployment, monitoring, hingga retraining berkelanjutan — berjalan otomatis sehingga sistem tetap skalabel, reproducible, dan mudah dirawat.",
+          "Tim kami membangun pipeline MLOps end-to-end untuk menganalisis sentimen publik terhadap program Makan Bergizi Gratis (MBG) dari unggahan di X (Twitter) dengan model IndoBERT. Seluruh tahap — pengumpulan data, preprocessing, training, deployment, monitoring, hingga retraining berkelanjutan — berjalan otomatis sehingga sistem tetap skalabel, reproducible, dan mudah dirawat.",
         role: "Saya fokus pada data engineering dan MLOps: alur pengumpulan data, preprocessing dataset, pipeline training dan retraining, serta deployment dan monitoring dengan GitHub Actions, Docker, MLflow, PostgreSQL, MinIO, dan Grafana.",
         outcome:
           "Pipeline berjalan terjadwal. Unggahan dari X diambil dan diklasifikasi setiap hari; data berlabel pakar diversikan dengan DVC tiap minggu; trainer melatih ulang model setiap minggu, dengan run tercatat di MLflow dan artefak disimpan di MinIO; dan setiap model baru langsung dipakai layanan inference. Prediksi dan metrik disimpan di PostgreSQL dan mengisi dashboard Grafana berisi sentimen tujuh hari terakhir. Ini proyek tim: bagian saya adalah lapisan data dan MLOps.",
@@ -286,8 +286,9 @@ export const projects: Project[] = [
     slug: "memoribox",
     year: "2026",
     category: "design",
-    roles: ["Product Designer", "Product Manager", "Software Tester"],
-    tags: ["Client project", "Desktop app", "User flows", "UAT"],
+    // [CV 2026-10]: lead Product (UI/UX) Designer, also Product Manager; ran SIT and UAT with the client.
+    roles: ["Lead Product Designer", "Product Manager", "SIT & UAT"],
+    tags: ["Client project", "Desktop app", "User flows", "SIT", "UAT"],
     links: [
       { kind: "figma", href: "https://www.figma.com/design/6PQwV0m6Pwr1gVBvVrakCB/MemoriBox-ID-Design?node-id=1-2&t=AisYN66Tg0ZBodjd-1" },
       { kind: "userflow", href: "https://www.figma.com/board/GEoXB0wFAzs64bP9FbJGY9/Memoribox-User-Flow?node-id=0-1&t=KDmvHHRZgXlgxIST-1" },
@@ -305,7 +306,7 @@ export const projects: Project[] = [
         tagline: "A self-service digital photobooth for events, from payment to printed photo.",
         overview:
           "memoribox.id wanted to turn a conventional photobooth into a modern, efficient, and scalable system for events and daily operations. Built by Semeton Corp, the self-service platform covers a payment gateway, template selection, retakes, photo customisation, automatic printing, digital delivery, cloud storage, and an admin analytics dashboard.",
-        role: "I gathered the client's requirements, defined user flows, designed wireframes and high-fidelity interfaces, and supported user acceptance testing with the client.",
+        role: "As the lead Product (UI/UX) Designer I gathered the client's requirements and designed the flows and high-fidelity screens for the self-service photobooth, with payment, automatic printing, and an admin dashboard. I also acted as Product Manager and ran system integration testing (SIT) and user acceptance testing (UAT) with the client.",
         outcome:
           "Managing a real client product taught me to translate business needs into clear features while keeping the photobooth experience efficient and easy to use.",
       },
@@ -315,7 +316,7 @@ export const projects: Project[] = [
         tagline: "Photobooth digital swalayan untuk acara, dari pembayaran sampai foto tercetak.",
         overview:
           "memoribox.id ingin mengubah photobooth konvensional menjadi sistem yang modern, efisien, dan skalabel untuk acara maupun operasional harian. Dibangun oleh Semeton Corp, platform swalayan ini mencakup payment gateway, pilihan template, foto ulang, kustomisasi foto, cetak otomatis, pengiriman digital, cloud storage, dan dashboard analitik admin.",
-        role: "Saya mengumpulkan kebutuhan klien, menyusun user flow, mendesain wireframe dan antarmuka high-fidelity, serta mendampingi user acceptance testing bersama klien.",
+        role: "Sebagai Product (UI/UX) Designer utama, saya mengumpulkan kebutuhan klien serta merancang alur dan desain high-fidelity photobooth swalayan dengan pembayaran, cetak otomatis, dan dashboard admin. Saya juga merangkap sebagai Product Manager dan menjalankan system integration testing (SIT) serta user acceptance testing (UAT) bersama klien.",
         outcome:
           "Mengelola produk klien sungguhan mengajarkan saya menerjemahkan kebutuhan bisnis menjadi fitur yang jelas, sambil menjaga pengalaman photobooth tetap efisien dan mudah dipakai.",
       },

@@ -233,7 +233,16 @@
       animation: scroll-progress linear both;
       animation-timeline: scroll(root);
     }
+
   }
+}
+
+/* Paper-like grain over the ember gradients (components/ember-texture.tsx). */
+.ember-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  mix-blend-mode: soft-light;
+  opacity: 0.55;
 }
 
 @keyframes reveal-in {
@@ -250,12 +259,12 @@
 @keyframes reveal-wipe {
   from {
     opacity: 0.2;
-    clip-path: inset(0 0 100% 0);
+    clip-path: inset(-20% 0 100% 0); /* -20% top: tight display line-height must not crop cap tops */
     transform: translateY(24px);
   }
   to {
     opacity: 1;
-    clip-path: inset(0 0 -10% 0);
+    clip-path: inset(-20% 0 -10% 0);
     transform: none;
   }
 }
@@ -711,3 +720,4 @@ html.theme-switching::view-transition-new(root) {
     opacity: 0;
   }
 }
+

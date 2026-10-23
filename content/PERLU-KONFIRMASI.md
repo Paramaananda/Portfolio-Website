@@ -9,6 +9,7 @@ yang sudah tampil di halaman diberi label `[PERLU KONFIRMASI]`.
 |---|---|
 | `content/resume.pdf` | CV terakhir sebelum magang di Garuda Indonesia (2 hlm). Sumber utama untuk Pengalaman, Pendidikan, Keahlian. |
 | `content/portfolio-garuda.pdf` | Deck portofolio 7 proyek (pengganti `slides.pdf`). |
+| `Downloads/I Putu Paramaananda Tanaya_CV.pdf` | CV terbaru (22 Okt 2026), 2 hlm, versi ID. Sumber Garuda, pencapaian, keahlian, IPK. Tidak disalin ke repo (memuat nomor HP). |
 | Pesan pengguna, 16 Okt 2026 | Saat ini IT Intern di Garuda Indonesia (Business Alignment) lewat MagangHub. |
 | `content/linkedin.pdf`, `content/notes.md` | **Tidak ada.** |
 
@@ -33,7 +34,8 @@ Organisasi (17 Okt 2026) = LinkedIn Volunteering (5 peran DDM di UNIKAHIDHA, 202
 Raion Community juga masuk Organisasi (permintaan pengguna), sebagai dua peran dari LinkedIn:
 UI/UX Designer Intern (Feb – Mar 2024) dan UI/UX Designer (Mar 2024 – Jan 2026).
 
-- Garuda Indonesia: mulai Agu 2026, Tangerang (dari LinkedIn). Masih perlu 2–3 hal yang dikerjakan.
+- Garuda Indonesia: terjawab dari CV baru (22 Okt 2026), 6 poin pekerjaan, jabatan JKTDX IT Intern.
+- CV baru menyebut StuntCare "(Hackathon)"; pengguna menegaskan konteksnya program magang Raion (22 Okt 2026).
   LinkedIn menulis jabatan "IT System Analyst and Business Alignment"; situs tetap "IT Intern" (permintaan pengguna).
 - Nama divisi DDM: CV menulis "Design, Decoration & Multimedia", LinkedIn "Design, Documentation & Multimedia". Situs memakai versi LinkedIn.
 - LinkedIn juga memuat **Product Designer, Volare & Company** (kontrak, Mar – Des 2025, remote) yang belum ada di situs. Ditambahkan?

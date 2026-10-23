@@ -24,10 +24,10 @@
     "semantic_hash": "3e8d5ad6cabbfd3ed6024a539f409ac4"
   },
   "src/app/[lang]/page.tsx": {
-    "mtime": 1792144335.7741396,
-    "seen": 1792341330.1519885,
-    "ast_hash": "35aad9c3b4119d283ac6459e7e4fc453",
-    "semantic_hash": "35aad9c3b4119d283ac6459e7e4fc453"
+    "mtime": 1792645233.472414,
+    "seen": 1792649121.9306972,
+    "ast_hash": "8d4ff9433747462ee8a0049755574d87",
+    "semantic_hash": ""
   },
   "src/app/[lang]/projects/[slug]/page.tsx": {
     "mtime": 1792464411.1114254,
@@ -66,10 +66,10 @@
     "semantic_hash": "a230e82cac7f755e0261a6b56926e938"
   },
   "src/components/lang-switch.tsx": {
-    "mtime": 1792235436.4412215,
-    "seen": 1792341330.1519885,
-    "ast_hash": "4dce49ad3d44e4613502d8e0be9f1bc3",
-    "semantic_hash": "4dce49ad3d44e4613502d8e0be9f1bc3"
+    "mtime": 1792466627.480056,
+    "seen": 1792466723.2842286,
+    "ast_hash": "406c1c5f5ca5181d66ae44fd3fbc9735",
+    "semantic_hash": ""
   },
   "src/components/logo.tsx": {
     "mtime": 1792239503.437852,
@@ -114,10 +114,10 @@
     "semantic_hash": "0bafcffbb2d4e206fe31811c80afc3be"
   },
   "src/components/sections/contact.tsx": {
-    "mtime": 1792239503.8066983,
-    "seen": 1792341330.1519885,
-    "ast_hash": "029e1d50ad18fb5caa3dee0bef5f0157",
-    "semantic_hash": "029e1d50ad18fb5caa3dee0bef5f0157"
+    "mtime": 1792481305.3322592,
+    "seen": 1792644413.9855242,
+    "ast_hash": "3a82a4f10bc3b2fa46d4902d6ded279d",
+    "semantic_hash": ""
   },
   "src/components/sections/experience-list.tsx": {
     "mtime": 1792383829.5210555,
@@ -126,34 +126,34 @@
     "semantic_hash": ""
   },
   "src/components/sections/experience.tsx": {
-    "mtime": 1792383829.536342,
-    "seen": 1792463866.1797307,
-    "ast_hash": "562a95d43e4a9dfc1d62b421e2fda97e",
+    "mtime": 1792644459.852944,
+    "seen": 1792649121.9306972,
+    "ast_hash": "d43d667b40c636eed1a62d0ff8a5fc7f",
     "semantic_hash": ""
   },
   "src/components/sections/hero.tsx": {
-    "mtime": 1792383829.5029716,
-    "seen": 1792463866.1797307,
-    "ast_hash": "0d9d75c68bd7259d5d616e693718302c",
+    "mtime": 1792481195.5502038,
+    "seen": 1792481271.2019837,
+    "ast_hash": "a82e57b59173bc15c0b1e2a58d49fc76",
     "semantic_hash": ""
   },
   "src/components/sections/project-grid.tsx": {
-    "mtime": 1792235062.865361,
-    "seen": 1792341330.1519885,
-    "ast_hash": "eba916581eac14c64aaf7e30c3819d3c",
-    "semantic_hash": "eba916581eac14c64aaf7e30c3819d3c"
+    "mtime": 1792645238.1539123,
+    "seen": 1792649121.9306972,
+    "ast_hash": "92a807d324609d5d923aa46a1a641b7d",
+    "semantic_hash": ""
   },
   "src/components/sections/projects.tsx": {
-    "mtime": 1792235427.590424,
-    "seen": 1792341330.1519885,
-    "ast_hash": "1de5be4be3c411457025fd4204ba4b6b",
-    "semantic_hash": "1de5be4be3c411457025fd4204ba4b6b"
+    "mtime": 1792645165.6954331,
+    "seen": 1792649121.9306972,
+    "ast_hash": "7d9583dee96eab44ad4d5a506d948b8e",
+    "semantic_hash": ""
   },
   "src/components/sections/skills.tsx": {
-    "mtime": 1792235427.673419,
-    "seen": 1792341330.1519885,
-    "ast_hash": "58f4359b0a5ffb36ed4b6bf9c208baa3",
-    "semantic_hash": "58f4359b0a5ffb36ed4b6bf9c208baa3"
+    "mtime": 1792645238.0125208,
+    "seen": 1792649121.9306972,
+    "ast_hash": "b68dd9d65d3e4b85b7c357e0314feeaa",
+    "semantic_hash": ""
   },
   "src/components/showcase.tsx": {
     "mtime": 1792236298.120815,
@@ -168,10 +168,10 @@
     "semantic_hash": "da513d4d81a434553b28037a6ff9634a"
   },
   "src/components/site-header.tsx": {
-    "mtime": 1792239503.798625,
-    "seen": 1792341330.1519885,
-    "ast_hash": "ef4d14c74b2de0ecf81dfed3edef9a59",
-    "semantic_hash": "ef4d14c74b2de0ecf81dfed3edef9a59"
+    "mtime": 1792644359.349653,
+    "seen": 1792644413.9855242,
+    "ast_hash": "5b2c49f50fb1a680793c7b8b156aa2ac",
+    "semantic_hash": ""
   },
   "src/components/theme-sync.tsx": {
     "mtime": 1792235062.7862377,
@@ -192,15 +192,15 @@
     "semantic_hash": "4d981f1d3c23511489a4680051d3de3b"
   },
   "src/content/projects.ts": {
-    "mtime": 1792464411.0943284,
-    "seen": 1792464565.0275078,
-    "ast_hash": "434ffd042726393b7c1e1ca688ce1c61",
+    "mtime": 1792645165.676805,
+    "seen": 1792649121.9306972,
+    "ast_hash": "c6067169af6fa7dbbea7d9071270b11b",
     "semantic_hash": ""
   },
   "src/content/skills.ts": {
-    "mtime": 1792391175.007895,
-    "seen": 1792463866.1797307,
-    "ast_hash": "d72696216cb344366264aee25c6bde12",
+    "mtime": 1792645201.4096808,
+    "seen": 1792649121.9306972,
+    "ast_hash": "818f011a4916e30f81572d9cd091407e",
     "semantic_hash": ""
   },
   "src/i18n/config.ts": {
@@ -210,15 +210,15 @@
     "semantic_hash": "aa8e65ec606901d687a86db403f2d89b"
   },
   "src/i18n/dictionaries/en.ts": {
-    "mtime": 1792464303.8544543,
-    "seen": 1792464565.0285306,
-    "ast_hash": "e3d8d8c80ac13b0fde1f6227af04cecf",
+    "mtime": 1792645201.4096808,
+    "seen": 1792649121.9306972,
+    "ast_hash": "165e88c544d183881688eb134a279fd2",
     "semantic_hash": ""
   },
   "src/i18n/dictionaries/id.ts": {
-    "mtime": 1792464303.8544543,
-    "seen": 1792464565.0285306,
-    "ast_hash": "4db48be356ad503cafd17c6937f03b57",
+    "mtime": 1792645201.4123342,
+    "seen": 1792649121.9306972,
+    "ast_hash": "0aa8f70d20a2cbc04483e65c08b09479",
     "semantic_hash": ""
   },
   "src/i18n/get-dictionary.ts": {
@@ -246,10 +246,10 @@
     "semantic_hash": "ee17fd1c97c735e9f3564e3f5251f125"
   },
   "content/PERLU-KONFIRMASI.md": {
-    "mtime": 1792219043.2622187,
-    "seen": 1792341330.1519885,
-    "ast_hash": "1810915cee778778801ce17929bf4f35",
-    "semantic_hash": "1810915cee778778801ce17929bf4f35"
+    "mtime": 1792644392.0831025,
+    "seen": 1792644413.9855242,
+    "ast_hash": "8df826047e92664480393bb2ace73452",
+    "semantic_hash": ""
   },
   "design/audit-apple-hig.md": {
     "mtime": 1792235518.652982,
@@ -879,6 +879,18 @@
     "mtime": 1792464468.9673178,
     "seen": 1792464565.0275078,
     "ast_hash": "d0dc285b341a4afbcfff3ed7f372097a",
+    "semantic_hash": ""
+  },
+  "src/components/ember-texture.tsx": {
+    "mtime": 1792480717.538283,
+    "seen": 1792480833.8842869,
+    "ast_hash": "61f9fc54a6c8a7e95c6c32cfea0e2602",
+    "semantic_hash": ""
+  },
+  "src/components/sections/tool-grid.tsx": {
+    "mtime": 1792645238.0614994,
+    "seen": 1792649121.9306972,
+    "ast_hash": "98663ac9866c7299720589eb0aff89a1",
     "semantic_hash": ""
   }
 }

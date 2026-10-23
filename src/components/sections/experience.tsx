@@ -78,6 +78,25 @@ export function Experience({ dict }: { dict: Dictionary }) {
         </div>
 
         {renderGroup("org", "mt-16 lg:mt-24")}
+
+        {/* Awards & training, last as on the CV. */}
+        <div className="mt-16 grid gap-6 lg:mt-24 lg:grid-cols-12 lg:gap-16">
+          <h3 className="reveal label text-ink-3 lg:col-span-3 lg:pt-6">{t.awards.label}</h3>
+          <ul className="reveal border-b border-line lg:col-span-9">
+            {t.awards.items.map((a) => (
+              <li
+                key={a.title}
+                className="grid grid-cols-[auto_1fr] items-baseline gap-x-6 gap-y-1 border-t border-line py-5 lg:grid-cols-12 lg:gap-x-10"
+              >
+                <span className="label text-ink-3 lg:col-span-2">{a.year}</span>
+                <span className="lg:col-span-10">
+                  <span className="block text-lg leading-snug font-medium tracking-tight">{a.title}</span>
+                  <span className="mt-0.5 block text-sm text-ink-2">{a.org}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

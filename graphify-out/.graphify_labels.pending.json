@@ -1,5 +1,7 @@
 {
-  "0": "project-grid.tsx",
-  "10": "showcase.tsx",
-  "11": "build-rag-demo.py"
+  "0": "showcase.tsx",
+  "9": "experience.tsx",
+  "10": "site-header.tsx",
+  "11": "build-rag-demo.py",
+  "12": "mlops-pipeline.tsx"
 }

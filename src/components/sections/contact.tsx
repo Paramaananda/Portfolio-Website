@@ -1,6 +1,7 @@
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { profile } from "@/content/profile";
 import { SectionLabel } from "@/components/section-label";
+import { EmberTexture } from "@/components/ember-texture";
 import { CopyButton } from "@/components/copy-button";
 import { ArrowUpRight } from "@/components/icons";
 
@@ -13,26 +14,36 @@ export function Contact({ dict }: { dict: Dictionary }) {
   ];
 
   return (
-    <section id="contact" aria-labelledby="contact-title" className="container-page pb-16 lg:pb-24">
-      {/* Same ember frame as the hero, so the page opens and closes on it. */}
+    <section
+      id="contact"
+      aria-labelledby="contact-title"
+      className="container-page pb-16 lg:pb-24"
+    >
+      {/* Same ember frame as the hero, so the page opens and closes on it. The heading has no
+          scroll-linked wipe: Contact sits at the page end, where such an animation cannot finish. */}
       <div className="reveal relative isolate overflow-hidden rounded-frame bg-ember-600 px-6 py-14 sm:px-10 sm:py-20 lg:px-14 lg:py-24">
         <div
           aria-hidden
           className="absolute inset-0 -z-20 bg-[radial-gradient(70%_90%_at_85%_10%,var(--color-ember-300)_0%,var(--color-ember-500)_30%,var(--color-ember-600)_60%,var(--color-ember-800)_85%,var(--color-ember-950)_100%)]"
         />
+        <EmberTexture />
         {/* Keeps the white copy on the left at ≥ 5.7:1 */}
         <div
           aria-hidden
           className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(61_20_5/0.6)_0%,rgb(61_20_5/0.25)_45%,transparent_70%)]"
         />
 
-        <SectionLabel tone="light">
-          {t.label}
-        </SectionLabel>
-        <h2 id="contact-title" lang="en" className="reveal-wipe mt-6 font-display text-mega text-white uppercase">
+        <SectionLabel tone="light">{t.label}</SectionLabel>
+        <h2
+          id="contact-title"
+          lang="en"
+          className="mt-6 font-display text-mega text-white uppercase"
+        >
           {t.heading}
         </h2>
-        <p className="mt-6 max-w-[34ch] text-lg leading-snug text-white/90 sm:text-xl">{t.lead}</p>
+        <p className="mt-6 max-w-[34ch] text-lg leading-snug text-white/90 sm:text-xl">
+          {t.lead}
+        </p>
 
         <div className="mt-12 grid gap-10 border-t border-white/25 pt-8 lg:mt-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
@@ -44,7 +55,11 @@ export function Contact({ dict }: { dict: Dictionary }) {
               >
                 {profile.email}
               </a>
-              <CopyButton value={profile.email} label={t.copy} doneLabel={t.copied} />
+              <CopyButton
+                value={profile.email}
+                label={t.copy}
+                doneLabel={t.copied}
+              />
             </div>
           </div>
 

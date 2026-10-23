@@ -42,8 +42,9 @@ const en = {
     label: "About",
     // Display heading stays English on every locale, like the hero word.
     heading: ["Design", "Data"],
-    // Identity sentence (audit, approved 17 Oct 2026): name + AI/data + product design, visible near the top.
-    lead: "I'm I Putu Paramaananda Tanaya. I build AI and data systems, and design the products people use them through.",
+    // Identity sentence (audit, 17 Oct 2026), repositioned to the [CV 2026-10] headline:
+    // IT Business Analyst | System Analyst | UI/UX Design | Data & AI (user, 22 Oct 2026).
+    lead: "I'm I Putu Paramaananda Tanaya. I turn business needs into working products, as an IT business analyst and UI/UX designer with hands-on data and AI.",
     // [CV] TRAVLR + Raion (UI/UX); [PDF] p2 thesis RAG QA, p3 MLOps pipeline with continuous retraining;
     // [USER] current role at Garuda Indonesia
     body: [
@@ -86,30 +87,38 @@ const en = {
     now: "Now",
     groups: { work: "Work experience", org: "Organizations" },
     entries: [
-      // [USER] role framing + [LinkedIn Experience] start date and location.
+      // [CV 2026-10] I Putu Paramaananda Tanaya_CV.pdf (user, 22 Oct 2026): role, unit, programme, points.
       {
         group: "work",
         current: true,
-        role: "IT Intern",
+        role: "IT Intern, JKTDX",
         org: "PT Garuda Indonesia (Persero) Tbk",
-        meta: "Business Alignment · MagangHub · Tangerang",
+        meta: "IT Business Alignment, Digital Transformation · MagangHub, Ministry of Manpower · Tangerang",
         period: "Aug 2026 – Present",
         confirm: "",
-        points: [] as string[],
+        points: [
+          "Coordinated business, data, design, and developer teams for the Journey to Reward loyalty programme (Sky Rewards) from product brief to go-live; it now serves 2,700+ users and is still growing.",
+          "Wrote its Business Case with page flows, user flows, and use case diagrams, and aligned content, coupon data, the leaderboard feature, and GarudaMiles validation with users and developers.",
+          "Prepared the E-ITL Business Case (functional and technical requirements, timeline, mockups, cost-benefit analysis, budget, risks) and presented it to VPs and Senior Managers at the Enterprise Architecture Board.",
+          "Evaluated vendors for the Customer Data Platform (CDP) procurement, a Board-level strategic programme, through vendor presentations, a proof of concept, clarification and negotiation, and vendor scoring.",
+          "Tested booking and payment on the Garuda Indonesia website and the Fly GA app (PNR issuance, rescheduling, Upgrade Family Fare, Payment Orchestrator) and logged findings for the developers.",
+          "Wrote service requests, minutes of meetings, and a mandays-based Business Case for GarudaMiles Anniversary, and supported JKTDX's annual IT portfolio inventory.",
+        ],
       },
-      // [CV] + [LinkedIn Experience]
+      // [CV 2026-10] + [LinkedIn Experience]
       {
         group: "work",
         current: false,
         role: "UI/UX Intern",
         org: "PT TRAVLR GUIDES INDONESIA",
-        meta: "Bali · The Bali Bible",
+        meta: "Denpasar, Bali · The Bali Bible",
         period: "Feb – Jun 2025",
         confirm: "",
         points: [
-          "Redesigned an existing web-based travel platform as an end-to-end mobile app.",
-          "Produced wireframes, high-fidelity designs, prototypes, and iterations from user behaviour, demographic insights, and internal data, plus the Travlr AI innovation concept.",
-          "Ran Maze usability tests with 23 respondents across 14 blocks and turned the feedback into design improvements with cross-functional teams.",
+          "Redesigned a web-based travel platform as an end-to-end mobile app with a user-centred approach, alongside one fellow UI/UX intern.",
+          "Analysed user behaviour, demographics, internal data, and Google Analytics 4, plus competitors, to ground design decisions in data.",
+          "Produced user flows, wireframes, high-fidelity designs, and prototypes, including the Travlr AI concept for personalised trip recommendations.",
+          "Validated the design with Maze usability testing (23 respondents, 14 blocks) and refined it with the Product, Data, and Engineering teams.",
         ],
       },
       // Organizations: [LinkedIn Volunteering] + the UNIKAHIDHA entry from [LinkedIn Experience] (user request, 17 Oct 2026).
@@ -225,10 +234,10 @@ const en = {
       label: "Education",
       items: [
         {
-          // [CV] Pendidikan
+          // [CV 2026-10] Pendidikan: S.Kom., GPA 3.72 (shown here only, not in the hero; user 22 Oct 2026).
           school: "Universitas Brawijaya",
           program: "Informatics Engineering",
-          meta: "Bachelor of Computer Science · Malang",
+          meta: "Bachelor of Computer Science (S.Kom.) · GPA 3.72/4.00 · Malang",
           period: "Sep 2022 – Jan 2026 · 3.5 years",
           confirm: "",
         },
@@ -240,6 +249,14 @@ const en = {
           period: "2019 – 2022",
           confirm: "",
         },
+      ],
+    },
+    // [CV 2026-10] Penghargaan & Pelatihan.
+    awards: {
+      label: "Awards & training",
+      items: [
+        { title: "Top 10 Finalist, Data Analysis Competition", org: "IFEST 2024 · Universitas Padjadjaran", year: "2024" },
+        { title: "Data Visualization class (16 hours)", org: "Dicoding", year: "2025" },
       ],
     },
   },

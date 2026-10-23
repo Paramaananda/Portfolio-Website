@@ -29,8 +29,9 @@ export function SiteHeader({ lang, dict }: { lang: Locale; dict: Dictionary }) {
       <div className="container-page flex h-16 items-center justify-between gap-3">
         <Link href={`/${lang}`} className="group flex min-h-11 items-center gap-2.5">
           <Logo className="size-8 shrink-0 transition-transform duration-300 ease-out-soft group-hover:rotate-6" />
-          <span className="hidden font-medium tracking-tight min-[400px]:inline sm:hidden">{profile.shortName}</span>
-          <span className="hidden font-medium tracking-tight sm:inline">{profile.name}</span>
+          {/* Full name only where it fits beside the nav; it wraps at tablet widths otherwise. */}
+          <span className="hidden font-medium tracking-tight whitespace-nowrap min-[400px]:inline xl:hidden">{profile.shortName}</span>
+          <span className="hidden font-medium tracking-tight whitespace-nowrap xl:inline">{profile.name}</span>
         </Link>
 
         <nav aria-label={dict.a11y.primaryNav} className="hidden lg:block">

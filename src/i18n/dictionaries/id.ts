@@ -40,7 +40,7 @@ const id: Dictionary = {
   about: {
     label: "Tentang",
     heading: ["Design", "Data"],
-    lead: "Saya I Putu Paramaananda Tanaya. Saya membangun sistem AI dan data, serta merancang produk yang membuatnya bisa dipakai orang.",
+    lead: "Saya I Putu Paramaananda Tanaya. Saya mengubah kebutuhan bisnis menjadi produk yang berjalan, sebagai IT business analyst dan UI/UX designer dengan kemampuan data dan AI.",
     body: [
       "Sebagai lulusan Teknik Informatika Universitas Brawijaya, saya memulai dari UI/UX — ngobrol dengan pengguna, memetakan alur, dan menguji prototipe sampai terasa mudah dipakai.",
       "Rasa penasaran itu membawa saya ke sisi data: sistem tanya-jawab berbasis RAG untuk skripsi, dan pipeline MLOps yang melatih ulang model sentimen dengan data terbaru. Kini saya menjadi IT Intern di Garuda Indonesia.",
@@ -78,25 +78,33 @@ const id: Dictionary = {
       {
         group: "work",
         current: true,
-        role: "IT Intern",
+        role: "IT Intern, JKTDX",
         org: "PT Garuda Indonesia (Persero) Tbk",
-        meta: "Business Alignment · MagangHub · Tangerang",
+        meta: "IT Business Alignment, Digital Transformation · Program MagangHub, Kementerian Ketenagakerjaan · Tangerang",
         period: "Agu 2026 – Sekarang",
         confirm: "",
-        points: [],
+        points: [
+          "Mengoordinasikan tim bisnis, data, desain, dan developer untuk program loyalitas Journey to Reward (Sky Rewards) dari product brief hingga go-live; kini digunakan 2.700+ pengguna dan terus bertambah.",
+          "Menyusun Business Case beserta page flow, user flow, dan use case diagram, serta menyelaraskan konten, data kupon, fitur leaderboard, dan validasi GarudaMiles dengan user dan developer.",
+          "Menyusun Business Case E-ITL (kebutuhan fungsional dan teknis, timeline, mockup, cost-benefit analysis, anggaran, risiko) dan mempresentasikannya kepada VP dan Senior Manager di Enterprise Architecture Board.",
+          "Mengevaluasi vendor pengadaan Customer Data Platform (CDP), program strategis Direksi, melalui presentasi vendor, proof of concept, klarifikasi dan negosiasi, serta penilaian vendor.",
+          "Menguji fitur pemesanan dan pembayaran di website Garuda Indonesia dan aplikasi Fly GA (penerbitan PNR, reschedule, Upgrade Family Fare, Payment Orchestrator) serta mencatat temuan untuk tim developer.",
+          "Menyusun Service Request, Minutes of Meeting, dan Business Case GarudaMiles Anniversary berbasis estimasi mandays, serta mendukung pendataan IT Portfolio tahunan JKTDX.",
+        ],
       },
       {
         group: "work",
         current: false,
         role: "UI/UX Intern",
         org: "PT TRAVLR GUIDES INDONESIA",
-        meta: "Bali · The Bali Bible",
+        meta: "Denpasar, Bali · The Bali Bible",
         period: "Feb – Jun 2025",
         confirm: "",
         points: [
-          "Merancang ulang platform travel berbasis web menjadi aplikasi mobile secara end-to-end.",
-          "Membuat wireframe, desain high-fidelity, prototipe, dan iterasi berdasarkan perilaku pengguna, insight demografis, dan data internal, serta konsep inovasi Travlr AI.",
-          "Menjalankan usability testing di Maze dengan 23 responden dalam 14 blok, lalu menerjemahkan masukan menjadi perbaikan desain bersama tim lintas fungsi.",
+          "Merancang ulang platform perjalanan berbasis web menjadi aplikasi mobile end-to-end dengan pendekatan user-centered design, bersama satu rekan UI/UX intern.",
+          "Menganalisis perilaku pengguna, demografi, data internal, dan Google Analytics 4, serta analisis kompetitor, untuk mendukung keputusan desain berbasis data.",
+          "Membuat user flow, wireframe, desain high-fidelity, dan prototipe, termasuk konsep Travlr AI untuk rekomendasi perjalanan yang personal.",
+          "Memvalidasi desain melalui usability testing Maze dengan 23 responden di 14 blok pengujian, lalu menyempurnakannya bersama tim Product, Data, dan Engineering.",
         ],
       },
       {
@@ -209,7 +217,7 @@ const id: Dictionary = {
         {
           school: "Universitas Brawijaya",
           program: "Teknik Informatika",
-          meta: "Sarjana Ilmu Komputer · Malang",
+          meta: "Sarjana Komputer (S.Kom.) · IPK 3,72/4,00 · Malang",
           period: "Sep 2022 – Jan 2026 · 3,5 tahun",
           confirm: "",
         },
@@ -220,6 +228,13 @@ const id: Dictionary = {
           period: "2019 – 2022",
           confirm: "",
         },
+      ],
+    },
+    awards: {
+      label: "Penghargaan & pelatihan",
+      items: [
+        { title: "Top 10 Finalis, Kompetisi Analisis Data", org: "IFEST 2024 · Universitas Padjadjaran", year: "2024" },
+        { title: "Kelas Visualisasi Data (16 jam)", org: "Dicoding", year: "2025" },
       ],
     },
   },
