@@ -1,6 +1,7 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { MlopsPipeline } from "@/components/mlops-pipeline";
 import { RagDemo } from "@/components/rag-demo";
+import { PrototypeEmbed } from "@/components/prototype-embed";
 import { ViewTransition, type CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -62,6 +63,9 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/project
   const index = projects.findIndex((p) => p.slug === slug);
   const next = projects[(index + 1) % projects.length];
   const pad = (n: number) => String(n).padStart(2, "0");
+  const live = project.links.find((l) => l.kind === "live");
+  // Only Figma prototype links can be embedded.
+  const prototype = project.links.find((l) => l.kind === "prototype" && l.href.startsWith("https://www.figma.com/proto/"));
 
   return (
     <article className="pb-20 lg:pb-28">
@@ -78,9 +82,24 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/project
               {c.title}
             </h1>
           </div>
-          <p className="animate-rise text-xl leading-snug font-medium tracking-tight text-balance text-ink-2 sm:text-2xl lg:col-span-5" style={delay(160)}>
-            {c.tagline}
-          </p>
+          <div className="animate-rise lg:col-span-5" style={delay(160)}>
+            <p className="text-xl leading-snug font-medium tracking-tight text-balance text-ink-2 sm:text-2xl">{c.tagline}</p>
+            {live && (
+              <a
+                href={live.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group mt-6 inline-flex min-h-12 items-center gap-3 rounded-full bg-ink px-6 text-sm font-medium text-paper transition-colors hover:bg-signal-ink"
+              >
+                <span aria-hidden className="relative flex size-2">
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75 motion-reduce:animate-none" />
+                  <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
+                </span>
+                {t.links.live} · {new URL(live.href).host}
+                <ArrowUpRight className="size-4 transition-transform duration-300 ease-out-soft group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            )}
+          </div>
         </header>
 
         <ViewTransition name={`project-${project.slug}`} share="morph" default="none">
@@ -211,6 +230,7 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/project
 
         {project.interactive === "mlops-pipeline" && <MlopsPipeline lang={lang} labels={t.pipeline} />}
         {project.interactive === "rag-demo" && <RagDemo lang={lang} labels={t.ragDemo} />}
+        {prototype && <PrototypeEmbed href={prototype.href} title={c.title} tint={project.tint} labels={t.prototype} />}
 
         {/* Outcome */}
         <section aria-labelledby="outcome-title" className="reveal mt-20 rounded-frame bg-surface p-8 sm:p-12 lg:mt-28 lg:p-16">

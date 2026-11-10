@@ -267,6 +267,13 @@ const en = {
     filters: { all: "All", ai: "AI & Data", design: "Product design", web: "Web" },
     filterLabel: "Filter projects",
     process: "Process",
+    prototype: {
+      title: "Try the prototype",
+      lead: "The clickable Figma prototype, right here. Tap through it as a user would.",
+      load: "Load prototype",
+      hint: "Loads Figma's player (a few MB). Click hotspots to move between screens; press R to restart.",
+      open: "Open in Figma",
+    },
     ragDemo: {
       title: "Try it",
       lead: "Pick a patient case from the thesis evaluation set and a set-up, then run it to see each step of the RAG pipeline.",
@@ -306,6 +313,7 @@ const en = {
       cta: "Open GitHub",
     },
     view: "View project",
+    live: "Visit site",
     motion: { pause: "Pause animations", play: "Play animations" },
     back: "All projects",
     next: "Next project",
@@ -313,6 +321,8 @@ const en = {
     sections: { overview: "Overview", role: "My role", outcome: "Outcome" },
     linksLabel: "Links",
     links: {
+      live: "Visit live site",
+      instagram: "Instagram",
       github: "GitHub repo",
       publication: "Publication",
       deck: "Presentation deck",

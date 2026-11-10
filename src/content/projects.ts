@@ -10,7 +10,7 @@
 import type { Locale } from "@/i18n/config";
 
 export type Category = "ai" | "design" | "web";
-export type LinkKind = "github" | "publication" | "deck" | "figma" | "prototype" | "userflow";
+export type LinkKind = "live" | "instagram" | "github" | "publication" | "deck" | "figma" | "prototype" | "userflow";
 
 export type Img = { src: string; width: number; height: number };
 /** Gallery image with a description of what it shows (alt text), per locale. */
@@ -73,6 +73,9 @@ export const projects: Project[] = [
     roles: ["Product Designer", "Software Tester"],
     tags: ["Product design", "Web app", "User flows", "Responsive UI"],
     links: [
+      // [USER] Released; live at momenia.id.
+      { kind: "live", href: "https://momenia.id/" },
+      { kind: "instagram", href: "https://www.instagram.com/id.momenia/" },
       {
         kind: "figma",
         href: "https://www.figma.com/design/df6llHayTtyDXoEgxApgEs/MOMENIA-%F0%9F%A6%8B-Paramaananda?node-id=3004-1128&t=6LOzIszRjU3JaL7R-1",
@@ -95,7 +98,7 @@ export const projects: Project[] = [
           "Bali hosts countless events, ceremonies, and celebrations that need digital invitations, yet invitation websites are often expensive, manual, or hard to customise without help. Momenia, a self-initiated project by Semeton Corp, lets anyone create, customise, publish, and manage invitations — with editable templates, responsive layouts, add-ons, payments, guest management, RSVP tracking, a guestbook, and after-party notes.",
         role: "As Product Designer at Semeton Corp I translated product requirements into user flows, wireframes, high-fidelity screens, and responsive concepts for both the user and the admin experience.",
         outcome:
-          "I learned to turn a local market opportunity into a scalable product, structure a complex feature set into a clear journey, and prepare it for launch with a small startup team.",
+          "I learned to turn a local market opportunity into a scalable product, structure a complex feature set into a clear journey, and launch it with a small startup team.",
       },
       id: {
         title: "Momenia",
@@ -105,7 +108,7 @@ export const projects: Project[] = [
           "Bali punya banyak acara, upacara, dan perayaan yang membutuhkan undangan digital, tetapi membuat website undangan sering mahal, manual, atau sulit diatur tanpa bantuan teknis. Momenia, proyek inisiatif Semeton Corp, memudahkan siapa saja membuat, menyesuaikan, memublikasikan, dan mengelola undangan — lengkap dengan template, layout responsif, add-on, pembayaran, manajemen tamu, RSVP, buku tamu, dan catatan after-party.",
         role: "Sebagai Product Designer di Semeton Corp, saya menerjemahkan kebutuhan produk menjadi user flow, wireframe, desain high-fidelity, dan konsep responsif untuk sisi pengguna maupun admin.",
         outcome:
-          "Saya belajar mengubah peluang pasar lokal menjadi produk yang skalabel, menyusun fitur yang kompleks menjadi alur yang jelas, dan menyiapkannya untuk rilis bersama tim startup kecil.",
+          "Saya belajar mengubah peluang pasar lokal menjadi produk yang skalabel, menyusun fitur yang kompleks menjadi alur yang jelas, dan merilisnya bersama tim startup kecil.",
       },
     },
     journey: [

@@ -46,22 +46,16 @@ CLAUDE.md
 .mcp.json
 # AGENTS.md  (uncomment kalau mau menyembunyikannya)
 
-# Next.js build output
-.next/
-out/
-next-env.d.ts
-
-# TypeScript cache
-*.tsbuildinfo
-
-# Environment & local files
-.env
+# Local files
 .env*.local
-.DS_Store
 Thumbs.db
 *.log
 
 AGENTS.md
 README.md
 
-.graphify-out
+# graphify knowledge graph (local tooling, rebuilt by `graphify update .`)
+graphify-out/
+
+# Raw source video; the site uses the re-encoded copies in public/videos/momenia/
+src/content/Showcase Momenia.mp4

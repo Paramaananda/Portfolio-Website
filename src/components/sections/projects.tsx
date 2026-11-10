@@ -19,6 +19,7 @@ export function Projects({ lang, dict }: { lang: Locale; dict: Dictionary }) {
       tagline: c.tagline,
       tint: p.tint,
       showcase: p.showcase,
+      live: p.links.find((l) => l.kind === "live")?.href,
     };
   });
 
@@ -41,7 +42,7 @@ export function Projects({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         <ProjectGrid
           cards={cards}
           github={profile.links.github}
-          labels={{ filters: t.filters, filterLabel: t.filterLabel, view: t.view, motion: t.motion, more: t.more }}
+          labels={{ filters: t.filters, filterLabel: t.filterLabel, view: t.view, live: t.live, motion: t.motion, more: t.more }}
         />
       </div>
     </section>

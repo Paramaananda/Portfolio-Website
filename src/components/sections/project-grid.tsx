@@ -17,6 +17,8 @@ export type CardData = {
   tagline: string;
   tint: [string, string];
   showcase: ShowcaseData;
+  /** Public site of a released product. */
+  live?: string;
 };
 
 type Filter = "all" | Category;
@@ -28,6 +30,7 @@ type Props = {
     filters: Record<Filter, string>;
     filterLabel: string;
     view: string;
+    live: string;
     motion: { pause: string; play: string };
     more: { title: string; text: string; cta: string };
   };
@@ -73,7 +76,7 @@ export function ProjectGrid({ cards, github, labels }: Props) {
         {cards.map((c, i) => {
           const shown = filter === "all" || c.category === filter;
           return (
-            <li key={c.slug} hidden={!shown} className="reveal" style={{ "--i": i % 3 } as CSSProperties}>
+            <li key={c.slug} hidden={!shown} className="reveal relative @container" style={{ "--i": i % 3 } as CSSProperties}>
               {/* prefetch: resolves the [slug] params ahead of the click, so the page (and cover morph) is instant. */}
               <Link href={c.href} prefetch className="group block">
                 {/* Same name as the project page cover: the showcase morphs between the two. */}
@@ -89,12 +92,26 @@ export function ProjectGrid({ cards, github, labels }: Props) {
                   </div>
                 </ViewTransition>
                 <p className="label mt-4 text-ink-3">{c.meta}</p>
-                <h3 className="mt-1.5 text-xl leading-tight font-medium tracking-tight transition-colors group-hover:text-signal-ink">
+                <h3 className={`mt-1.5 ${c.live ? "pr-28" : ""} text-xl leading-tight font-medium tracking-tight transition-colors group-hover:text-signal-ink`}>
                   {c.title}
                 </h3>
                 <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-ink-2">{c.tagline}</p>
                 <span className="sr-only">{labels.view}</span>
               </Link>
+              {/* Sibling of the card link (anchors can't nest), right-aligned on the title row: cover (75cqw) + meta line + gap, centred on the title. */}
+              {c.live && (
+                <a
+                  href={c.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${labels.live} ${new URL(c.live).host}`}
+                  className="group/live label absolute top-[calc(75cqw+2.625rem)] right-0 z-10 inline-flex items-center gap-1.5 text-signal-ink transition-colors before:absolute before:-inset-3 before:content-[''] hover:text-ink"
+                >
+                  <span aria-hidden className="size-1.5 rounded-full bg-emerald-500" />
+                  {new URL(c.live).host}
+                  <ArrowUpRight className="size-3 transition-transform duration-300 ease-out-soft group-hover/live:translate-x-0.5 group-hover/live:-translate-y-0.5" />
+                </a>
+              )}
             </li>
           );
         })}

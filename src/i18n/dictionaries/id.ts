@@ -245,6 +245,13 @@ const id: Dictionary = {
     filters: { all: "Semua", ai: "AI & Data", design: "Desain produk", web: "Web" },
     filterLabel: "Filter proyek",
     process: "Proses",
+    prototype: {
+      title: "Try the prototype",
+      lead: "Prototipe Figma yang bisa diklik, langsung di sini. Coba jalankan seperti pengguna.",
+      load: "Muat prototipe",
+      hint: "Memuat player Figma (beberapa MB). Klik area interaktif untuk pindah layar; tekan R untuk mengulang.",
+      open: "Buka di Figma",
+    },
     ragDemo: {
       title: "Try it",
       lead: "Pilih satu kasus pasien dari data evaluasi skripsi dan satu skenario, lalu jalankan untuk melihat setiap tahap pipeline RAG.",
@@ -284,6 +291,7 @@ const id: Dictionary = {
       cta: "Buka GitHub",
     },
     view: "Lihat proyek",
+    live: "Kunjungi situs",
     motion: { pause: "Jeda animasi", play: "Putar animasi" },
     back: "Semua proyek",
     next: "Proyek berikutnya",
@@ -291,6 +299,8 @@ const id: Dictionary = {
     sections: { overview: "Gambaran", role: "Peran saya", outcome: "Hasil" },
     linksLabel: "Tautan",
     links: {
+      live: "Kunjungi situs live",
+      instagram: "Instagram",
       github: "Repo GitHub",
       publication: "Publikasi",
       deck: "Slide presentasi",
